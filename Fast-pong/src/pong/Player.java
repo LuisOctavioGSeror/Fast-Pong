@@ -22,10 +22,10 @@ public class Player {
 	public void tick(){
 		if(up)
 		{
-			y-=4;
+			y-=6;
 		}
 		else if(down) {
-			y+=4;
+			y+=6;
 		}
 		
 		if(y + height > Game.HEIGHT)
