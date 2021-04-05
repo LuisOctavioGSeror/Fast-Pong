@@ -12,7 +12,7 @@ public class Ball {
 		public int width,height;
 		
 		public double dx,dy;
-		public static double speed = 6;
+		public static double speed = 5;
 		public static int playerPoints = 0;
 		public static int enemyPoints = 0;
 		
