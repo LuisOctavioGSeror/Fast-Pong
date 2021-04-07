@@ -8,13 +8,13 @@ public class Enemy {
 
 	public double x,y;
 	public int width,height;
-	public static double dificult = 0.21; 
+	public static double dificult = 0.15; 
 	
 	public Enemy(int x,int y) {
 		this.x = x;
 		this.y = y;
-		this.width = 2;
-		this.height = 30;
+		this.width = 14;
+		this.height = 210;
 	}
 	
 	public void tick() {

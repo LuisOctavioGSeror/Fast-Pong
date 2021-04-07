@@ -14,9 +14,9 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable,KeyListener{
 	
 	private static final long serialVersionUID = 1L;
-	public static int WIDTH = 190;
-	public static int HEIGHT = 120;
-	public static int SCALE = 7;
+	public static int WIDTH = 1330;
+	public static int HEIGHT = 840;
+	public static int SCALE = 1;
 	
 	public BufferedImage layer = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 	
@@ -32,9 +32,9 @@ public class Game extends Canvas implements Runnable,KeyListener{
 	public Game() {
 		this.setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
 		this.addKeyListener(this);
-		player = new Player(WIDTH-2, 50);
+		player = new Player(WIDTH-14, 175);
 		enemy = new Enemy(0,50);
-		ball = new Ball(WIDTH - 40,HEIGHT/2 - 1);
+		ball = new Ball(WIDTH/2 ,HEIGHT/2 - 1);
 		
 		menu = new Menu();
 		pause = new Pause();

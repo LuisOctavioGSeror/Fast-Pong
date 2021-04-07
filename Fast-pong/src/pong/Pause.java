@@ -57,7 +57,7 @@ public class Pause {
 			}
 			
 			else if(options[currentOption] == "Dificult:") {
-				Ball.speed++;
+				Ball.speed += 10;
 				dificult++;
 				Enemy.dificult += 0.03;
 
@@ -70,8 +70,8 @@ public class Pause {
 		
 		if(dificult > 8) {
 			dificult = 1;
-			Ball.speed = 6;
-			Enemy.dificult = 0.21;
+			Ball.speed = 28;
+			Enemy.dificult = 0.15;
 		}	
 	}
 	
