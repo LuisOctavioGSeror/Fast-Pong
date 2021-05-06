@@ -15,17 +15,17 @@ public class Player {
 	public Player(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.width = 2;
-		this.height = 25;
+		this.width = 14;
+		this.height = 210;
 	}
 	
 	public void tick(){
 		if(up)
 		{
-			y-=4;
+			y-=60;
 		}
 		else if(down) {
-			y+=4;
+			y+=60;
 		}
 		
 		if(y + height > Game.HEIGHT)
@@ -33,8 +33,8 @@ public class Player {
 			y = Game.HEIGHT - height;
 		}
 		
-		else if(y < 25) {
-			y = 25;
+		else if(y < 172) {
+			y = 172;
 		}
 	}
 	
