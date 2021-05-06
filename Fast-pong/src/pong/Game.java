@@ -23,6 +23,9 @@ public class Game extends Canvas implements Runnable,KeyListener{
 	public static Player player;
 	public static Enemy enemy;
 	public static Ball ball;
+	private BufferedImage image;
+	
+	public static String gameState = "START";
 	
 	public Game() {
 		this.setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
@@ -46,9 +49,30 @@ public class Game extends Canvas implements Runnable,KeyListener{
 	}
 	
 	public void tick() {
-		player.tick();
-		enemy.tick();
-		ball.tick();
+		
+		if(gameState == "NORMAL") {
+			player.tick();
+			enemy.tick();
+			ball.tick();
+		}
+		
+		else if(gameState == "START") {
+			for(int i = 3; i > 0; i--) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+				//Graphics d = layer.getGraphics();
+				g.setColor(Color.black);
+				g.fillRect(0, 0, WIDTH*SCALE,HEIGHT*SCALE);
+				g.setColor(Color.white);
+				g.drawString(String.valueOf(i),WIDTH*SCALE/2,HEIGHT*SCALE/2);
+			
+			gameState = "NORMAL";
+			}
+		}
 	}
 	
 	public void render() {
@@ -59,7 +83,7 @@ public class Game extends Canvas implements Runnable,KeyListener{
 		}
 		Graphics g = layer.getGraphics();
 		//Graphics d = layer.getGraphics();
-		g.setColor(Color.black);
+		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		player.render(g);
 		enemy.render(g);
@@ -73,6 +97,7 @@ public class Game extends Canvas implements Runnable,KeyListener{
 	
 	@Override
 	public void run() {
+		requestFocus();
 		while(true) {
 			tick();
 			render();
